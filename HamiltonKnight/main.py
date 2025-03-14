@@ -9,22 +9,27 @@ solver = pywraplp.Solver.CreateSolver('SCIP')
 if not solver:
     raise Exception("Solver nie został poprawnie zainicjowany!")
 
-board_size_input = input("Podaj rozmiar szachownicy: ")
+if len(sys.argv) > 1:
+    board_size_input = sys.argv[1]
+else:
+    board_size_input = input("Podaj rozmiar szachownicy: ") or "8"
+
 board_size = int(board_size_input)
 
 squares = []
-for i in range(board_size):
-    for j in range(board_size):
+for i in range(board_size): 
+    for j in range(board_size): 
         if not (i == 0 and j == 0):
             squares.append((i, j))
 
 n = len(squares)
 
-if not (n != board_size**2 - 1): 
-    print("Szachownica o wymiarach", board_size, "x", board_size, "została poprawnie zainicjowana.")
+if len(squares) == board_size**2 - 1: 
+    print(f"Szachownica o wymiarach {board_size}x{board_size} została poprawnie zainicjowana.")
 else:
     print("Niepoprawny rozmiar szachownicy")
     sys.exit()
+
 
 square_to_index = {square: idx for idx, square in enumerate(squares)}
 
