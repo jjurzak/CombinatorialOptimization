@@ -1,3 +1,10 @@
+'''
+Czy graf przedstawiający ruch skoczka na szachownicy o wymiarach
+8 x 8, z której usunięto pole a1 ma cykl Hamiltona?
+
+JJurzak 59099
+'''
+
 import sys
 import threading
 import os
