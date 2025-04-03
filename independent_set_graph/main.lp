@@ -1,3 +1,9 @@
+% Załóżmy, że graf nieskierowany jest zadany za pomocą predykatów vertex
+% oraz edge. Zaproponuj program logiczny wyznaczający maksymalny zbiór niezależny.
+% (https://en.wikipedia.org/wiki/Independent_set_(graph_theory))
+% Jakub Jurzak 59099
+
+ 
 % wierzchołki
 vertex(a).
 vertex(b).
@@ -14,18 +20,13 @@ edge(d,e).
 edge(e,f).
 edge(b,f).
 
-
-
-% Zgadywanie zbioru niezależnego: dla każdego wierzchołka decydujemy, czy należy on do zbioru.
 { in(X) : vertex(X) }.
 
-% Ograniczenie niezależności: dwa sąsiadujące wierzchołki nie mogą być jednocześnie w zbiorze.
 :- in(X), in(Y), edge(X,Y).
 
-% Funkcja celu: maksymalizujemy liczbę wierzchołków w zbiorze niezależnym.
+% Funkcja celu
 #maximize { 1,X : in(X) }.
 
-% Predykat określający, że wierzchołek X ma sąsiada w zbiorze.
 neighbor_in(X) :- edge(X,Y), in(Y).
 neighbor_in(X) :- edge(Y,X), in(Y).
 
