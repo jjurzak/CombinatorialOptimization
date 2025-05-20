@@ -1,5 +1,13 @@
 import sys, os, time, random, string
 
+
+'''
+Rotację łańcucha znaków można uzyskać poprzez przesuwanie znaków jeden po drugim, od początku do końca. 
+Na przykład, rotacjami łańcucha acab są acab, caba, abac i baca. Naszym zadaniem
+jest ustalenie leksykograficznie najmniejszej rotacji łańcucha znaków. 
+Jeśli zatem tekstem wejściowym będzie aabaaabaa, to odpowiedzią powinna być rotacja aaaabaaab.
+'''
+
 def generate_random_string(length, alphabet=string.ascii_lowercase):
     return ''.join(random.choices(alphabet, k=length))
 
