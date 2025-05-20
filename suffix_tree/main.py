@@ -6,6 +6,8 @@ Rotację łańcucha znaków można uzyskać poprzez przesuwanie znaków jeden po
 Na przykład, rotacjami łańcucha acab są acab, caba, abac i baca. Naszym zadaniem
 jest ustalenie leksykograficznie najmniejszej rotacji łańcucha znaków. 
 Jeśli zatem tekstem wejściowym będzie aabaaabaa, to odpowiedzią powinna być rotacja aaaabaaab.
+
+JJurzak 59099
 '''
 
 def generate_random_string(length, alphabet=string.ascii_lowercase):
